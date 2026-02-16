@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karthik Nakkeeran | Data Scientist &amp; Digital Health AI Innovator</title>
+    <meta name="description" content="Portfolio of Karthik Nakkeeran – Data Scientist, AI/ML Researcher, and Ph.D. specializing in intelligent systems and advanced analytics.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { 50:'#eef2ff',100:'#e0e7ff',200:'#c7d2fe',300:'#a5b4fc',400:'#818cf8',500:'#6366f1',600:'#4f46e5',700:'#4338ca',800:'#3730a3',900:'#312e81' },
+                        surface: { 50:'#f8fafc',100:'#f1f5f9',200:'#e2e8f0',700:'#334155',800:'#1e293b',900:'#0f172a',950:'#020617' }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'Fira Code', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-surface-50 text-surface-800 dark:bg-surface-950 dark:text-surface-200 transition-colors duration-300">
+
+    <!-- ═══════════════════════ NAVIGATION ═══════════════════════ -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <!-- Logo -->
+                <a href="#hero" class="flex items-center gap-2 group">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:shadow-primary-500/25 transition-shadow">
+                        K
+                    </div>
+                    <div class="flex flex-col leading-none">
+                        <span class="text-lg font-bold text-surface-900 dark:text-white">Karthik</span>
+                        <span class="text-xs font-mono text-primary-600 dark:text-primary-400 tracking-wider">Nakkeeran</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center gap-1">
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="#education" class="nav-link">Education</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#publications" class="nav-link">Research</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+
+                <!-- Right side: social + theme + mobile toggle -->
+                <div class="flex items-center gap-3">
+                    <div class="hidden sm:flex items-center gap-2">
+                        <a href="https://www.linkedin.com/in/karthik-nakkeeran-a9977a5/" target="_blank" rel="noopener" class="social-icon-nav" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://scholar.google.com/citations?user=fJ3kYroAAAAJ&hl=en" target="_blank" rel="noopener" class="social-icon-nav" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="https://medium.com/@karthik9001" target="_blank" rel="noopener" class="social-icon-nav" title="Medium"><i class="fab fa-medium-m"></i></a>
+                    </div>
+                    <button id="theme-toggle" class="w-9 h-9 rounded-lg flex items-center justify-center text-surface-600 dark:text-surface-400 hover:bg-surface-200 dark:hover:bg-surface-800 transition-colors" title="Toggle dark mode">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline"></i>
+                    </button>
+                    <button id="mobile-toggle" class="md:hidden w-9 h-9 rounded-lg flex items-center justify-center text-surface-600 dark:text-surface-400 hover:bg-surface-200 dark:hover:bg-surface-800 transition-colors">
+                        <i class="fas fa-bars" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white/95 dark:bg-surface-900/95 backdrop-blur-lg border-t border-surface-200 dark:border-surface-800">
+            <div class="px-4 py-4 space-y-1">
+                <a href="#about" class="mobile-link">About</a>
+                <a href="#skills" class="mobile-link">Skills</a>
+                <a href="#experience" class="mobile-link">Experience</a>
+                <a href="#education" class="mobile-link">Education</a>
+                <a href="#projects" class="mobile-link">Projects</a>
+                <a href="#publications" class="mobile-link">Research</a>
+                <a href="#contact" class="mobile-link">Contact</a>
+                <div class="flex items-center gap-3 pt-3 border-t border-surface-200 dark:border-surface-700">
+                    <a href="https://www.linkedin.com/in/karthik-nakkeeran-a9977a5/" target="_blank" rel="noopener" class="social-icon-nav"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://scholar.google.com/citations?user=fJ3kYroAAAAJ&hl=en" target="_blank" rel="noopener" class="social-icon-nav"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="https://medium.com/@karthik9001" target="_blank" rel="noopener" class="social-icon-nav"><i class="fab fa-medium-m"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════ HERO ═══════════════════════ -->
+    <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+        <!-- Animated background pattern -->
+        <div class="absolute inset-0 hero-grid opacity-[0.03] dark:opacity-[0.05]"></div>
+        <div class="absolute top-1/4 -right-32 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-1/4 -left-32 w-96 h-96 bg-primary-400/10 rounded-full blur-3xl"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+            <div class="max-w-4xl">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-sm font-medium mb-8 animate-fade-in">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    Open to opportunities
+                </div>
+
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6 animate-fade-in-up">
+                    Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-primary-700">Karthik Nakkeeran</span>
+                </h1>
+
+                <p class="text-xl sm:text-2xl lg:text-3xl text-surface-600 dark:text-surface-400 font-light mb-4 animate-fade-in-up delay-100">
+                    Data Scientist &amp; Digital Health AI Innovator
+                </p>
+
+                <p class="text-lg text-surface-500 dark:text-surface-500 max-w-2xl mb-10 animate-fade-in-up delay-200">
+                    Pioneering <strong class="text-surface-700 dark:text-surface-300">AI-driven digital health</strong> at <strong class="text-surface-700 dark:text-surface-300">Abbott</strong>.
+                    18+ years building patented <strong class="text-surface-700 dark:text-surface-300">Machine Learning</strong> and
+                    <strong class="text-surface-700 dark:text-surface-300">Generative AI</strong> solutions that empower people
+                    with diabetes to take control of their metabolic health.
+                </p>
+
+                <div class="flex flex-wrap gap-4 animate-fade-in-up delay-300">
+                    <a href="#projects" class="inline-flex items-center gap-2 px-8 py-3.5 bg-primary-600 hover:bg-primary-700 text-white rounded-xl font-semibold shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 transition-all">
+                        View My Work <i class="fas fa-arrow-right text-sm"></i>
+                    </a>
+                    <a href="#contact" class="inline-flex items-center gap-2 px-8 py-3.5 border-2 border-surface-300 dark:border-surface-700 text-surface-700 dark:text-surface-300 rounded-xl font-semibold hover:border-primary-500 hover:text-primary-600 dark:hover:text-primary-400 transition-all">
+                        Get In Touch
+                    </a>
+                </div>
+
+                <!-- Quick stats -->
+                <div class="flex flex-wrap gap-8 mt-16 pt-8 border-t border-surface-200 dark:border-surface-800 animate-fade-in-up delay-400">
+                    <div>
+                        <div class="text-3xl font-bold text-surface-900 dark:text-white">18+</div>
+                        <div class="text-sm text-surface-500">Years Experience</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-surface-900 dark:text-white">2</div>
+                        <div class="text-sm text-surface-500">U.S. Patents</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-surface-900 dark:text-white">4+</div>
+                        <div class="text-sm text-surface-500">Publications</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-surface-900 dark:text-white">3</div>
+                        <div class="text-sm text-surface-500">Awards</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-surface-400 hover:text-primary-500 transition-colors">
+                <i class="fas fa-chevron-down text-xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ ABOUT ═══════════════════════ -->
+    <section id="about" class="py-24 bg-white dark:bg-surface-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block font-mono text-primary-600 dark:text-primary-400 text-sm tracking-wider uppercase mb-2">// About Me</span>
+                <h2 class="text-4xl font-bold text-surface-900 dark:text-white">Background &amp; Expertise</h2>
+            </div>
+
+            <div class="grid lg:grid-cols-5 gap-12 items-start">
+                <!-- Photo / Visual placeholder -->
+                <div class="lg:col-span-2 flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 lg:w-80 lg:h-80 rounded-2xl bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900/40 dark:to-primary-800/40 flex items-center justify-center overflow-hidden shadow-xl">
+                            <div class="text-center">
+                                <i class="fas fa-heart-pulse text-6xl text-primary-500/50 mb-4"></i>
+                                <div class="font-mono text-sm text-primary-600 dark:text-primary-400">
+                                    <span class="typing-text">digital_health_ai</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Decorative elements -->
+                        <div class="absolute -top-4 -right-4 w-24 h-24 border-2 border-primary-300 dark:border-primary-700 rounded-2xl -z-10"></div>
+                        <div class="absolute -bottom-4 -left-4 w-24 h-24 bg-primary-500/10 rounded-2xl -z-10"></div>
+                    </div>
+                </div>
+
+                <!-- Bio content -->
+                <div class="lg:col-span-3 space-y-6">
+                    <p class="text-lg text-surface-600 dark:text-surface-400 leading-relaxed">
+                        I am a <strong class="text-surface-800 dark:text-surface-200">Senior Data Scientist at Abbott</strong>, where I lead the AI/ML strategy for the <strong class="text-surface-800 dark:text-surface-200">Lingo bio-wearable Continuous Glucose Monitor (CGM)</strong>. My work directly impacts <strong class="text-surface-800 dark:text-surface-200">diabetes management and metabolic health</strong>, spanning real-time glucose spike detection and GenAI-powered nutrition coaching that empower millions of users to make informed, data-driven health decisions every day.
+                    </p>
+                    <p class="text-lg text-surface-600 dark:text-surface-400 leading-relaxed">
+                        With 18+ years in <strong class="text-surface-800 dark:text-surface-200">digital health, Computer Vision, and Generative AI</strong>, I hold two U.S. patents and have published peer-reviewed research on CGM manufacturing, diabetic ketoacidosis detection, and clinical data extraction. Previously at <strong class="text-surface-800 dark:text-surface-200">SAS Institute</strong>, I built a patented Document Vision product and deployed analytics solutions for global FMCG brands including Nestlé, Hershey’s, Kellogg’s, and Mondelez. I’m a <strong class="text-surface-800 dark:text-surface-200">Sigma XI member</strong>, a <strong class="text-surface-800 dark:text-surface-200">IICSPA Fellow</strong>, and a <strong class="text-surface-800 dark:text-surface-200">Raptor Fellowship</strong> recipient.
+                    </p>
+
+                    <!-- Info cards -->
+                    <div class="grid sm:grid-cols-2 gap-4 pt-4">
+                        <div class="flex items-start gap-3 p-4 rounded-xl bg-surface-50 dark:bg-surface-800/50">
+                            <div class="w-10 h-10 rounded-lg bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-primary-600 dark:text-primary-400 flex-shrink-0">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-surface-900 dark:text-white text-sm">Current Role</div>
+                                <div class="text-sm text-surface-500">Sr. Data Scientist, Abbott</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-4 rounded-xl bg-surface-50 dark:bg-surface-800/50">
+                            <div class="w-10 h-10 rounded-lg bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-primary-600 dark:text-primary-400 flex-shrink-0">
+                                <i class="fas fa-microscope"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-surface-900 dark:text-white text-sm">Focus Area</div>
+                                <div class="text-sm text-surface-500">Digital Health, GenAI, CV</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-4 rounded-xl bg-surface-50 dark:bg-surface-800/50">
+                            <div class="w-10 h-10 rounded-lg bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-primary-600 dark:text-primary-400 flex-shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-surface-900 dark:text-white text-sm">Location</div>
+                                <div class="text-sm text-surface-500">Milpitas, California, USA</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-4 rounded-xl bg-surface-50 dark:bg-surface-800/50">
+                            <div class="w-10 h-10 rounded-lg bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-primary-600 dark:text-primary-400 flex-shrink-0">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-surface-900 dark:text-white text-sm">Patents</div>
+                                <div class="text-sm text-surface-500">2 U.S. Patents (granted + pending)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ SKILLS ═══════════════════════ -->
+    <section id="skills" class="py-24 bg-surface-50 dark:bg-surface-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block font-mono text-primary-600 dark:text-primary-400 text-sm tracking-wider uppercase mb-2">// Tech Stack</span>
+                <h2 class="text-4xl font-bold text-surface-900 dark:text-white">Skills &amp; Technologies</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Data Science & Analytics -->
+                <div class="skill-category group">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white shadow-lg">
+                            <i class="fas fa-chart-line text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-surface-900 dark:text-white">Data Science</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SAS</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">SciPy</span>
+                        <span class="skill-tag">Statistical Modeling</span>
+                        <span class="skill-tag">A/B Testing</span>
+                        <span class="skill-tag">EDA</span>
+                        <span class="skill-tag">Feature Engineering</span>
+                        <span class="skill-tag">Time Series</span>
+                    </div>
+                </div>
+
+                <!-- AI / ML / Deep Learning -->
+                <div class="skill-category group">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center text-white shadow-lg">
+                            <i class="fas fa-robot text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-surface-900 dark:text-white">AI &amp; ML</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">Keras</span>
+                        <span class="skill-tag">Hugging Face</span>
+                        <span class="skill-tag">Transformers</span>
+                        <span class="skill-tag">LLMs</span>
+                        <span class="skill-tag">NLP</span>
+                        <span class="skill-tag">Computer Vision</span>
+                        <span class="skill-tag">GANs</span>
+                        <span class="skill-tag">Reinforcement Learning</span>
+                        <span class="skill-tag">MLflow</span>
+                        <span class="skill-tag">LangChain</span>
+                    </div>
+                </div>
+
+                <!-- Tools & Infrastructure -->
+                <div class="skill-category group">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center text-white shadow-lg">
+                            <i class="fas fa-tools text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-surface-900 dark:text-white">Tools &amp; Infra</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">Git / GitHub</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">GCP</span>
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">Spark</span>
+                        <span class="skill-tag">Airflow</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Linux</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ EXPERIENCE ═══════════════════════ -->
+    <section id="experience" class="py-24 bg-white dark:bg-surface-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block font-mono text-primary-600 dark:text-primary-400 text-sm tracking-wider uppercase mb-2">// Career Path</span>
+                <h2 class="text-4xl font-bold text-surface-900 dark:text-white">Professional Experience</h2>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <!-- Timeline -->
+                <div class="relative">
+                    <!-- Timeline line -->
+                    <div class="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-primary-500 via-primary-300 to-transparent dark:from-primary-400 dark:via-primary-700"></div>
+
+                    <!-- Item 1: Abbott -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot">
+                            <i class="fas fa-briefcase text-xs"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="flex flex-wrap items-center gap-2 mb-2">
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-300">2023 – Present</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-surface-900 dark:text-white">Senior Data Scientist</h3>
+                            <p class="text-primary-600 dark:text-primary-400 font-medium mb-3">Abbott, Lingo Bio-wearable CGM Platform</p>
+                            <p class="text-surface-500 dark:text-surface-500 text-sm italic mb-3">Building AI that transforms how people with diabetes and metabolic conditions monitor, understand, and manage their glucose health.</p>
+                            <ul class="space-y-2 text-surface-600 dark:text-surface-400 text-sm">
+                                <li class="flex items-start gap-2"><i class="fas fa-caret-right text-primary-500 mt-1 flex-shrink-0"></i>Architected ML-driven glucose spike detection system for the Lingo CGM platform, enabling users to identify harmful glycemic fluctuations in real time and take proactive steps to manage blood sugar. This work led to a U.S. patent application (US20250226096A1)</li>
+                                <li class="flex items-start gap-2"><i class="fas fa-caret-right text-primary-500 mt-1 flex-shrink-0"></i>Designed Personalized Insights Engine that translates raw CGM biosensor data into individualized meal and exercise recommendations, helping users understand exactly how specific foods affect their glucose response</li>
+                                <li class="flex items-start gap-2"><i class="fas fa-caret-right text-primary-500 mt-1 flex-shrink-0"></i>Built GenAI Food Logging using ChatGPT-powered image recognition to reduce the burden of manual nutritional tracking, making diet management effortless for CGM users</li>
+                                <li class="flex items-start gap-2"><i class="fas fa-caret-right text-primary-500 mt-1 flex-shrink-0"></i>Implemented GenAI Health ChatBot that transforms passive glucose monitoring into interactive, personalized wellness coaching by delivering context-aware guidance based on real-time biometric data</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: SAS Senior DS -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot">
+                            <i class="fas fa-flask text-xs"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="flex flex-wrap items-center gap-2 mb-2">
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-300">2020 – 2023</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-surface-900 dark:text-white">Senior Data Scientist</h3>
+                            <p class="text-primary-600 dark:text-primary-400 font-medium mb-3">SAS Institute Inc.</p>
+                            <ul class="space-y-2 text-surface-600 dark:text-surface-400 text-sm">
+                                <li class="flex items-start gap-2"><i class="fas fa-caret-right text-primary-500 mt-1 flex-shrink-0"></i>Architected Document Vision Product using PyTorch, Tesseract OCR, and OpenCV to convert scanned documents into machine-readable datasets</li>
+                                <li class="flex items-start gap-2"><i class="fas fa-caret-right text-primary-500 mt-1 flex-shrink-0"></i>Granted U.S. Patent (US11443416B2, Sept 2022), cited by 14+ entities including Intuit, Oracle, Alibaba, and Accenture</li>
+                                <li class="flex items-start gap-2"><i class="fas fa-caret-right text-primary-500 mt-1 flex-shrink-0"></i>Reduced data entry errors by over 80% through automated table extraction from unstructured scanned images</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: SAS Technical Consultant -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot">
+                            <i class="fas fa-code text-xs"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="flex flex-wrap items-center gap-2 mb-2">
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-300">2015 – 2020</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-surface-900 dark:text-white">Technical Consultant</h3>
+                            <p class="text-primary-600 dark:text-primary-400 font-medium mb-3">SAS Institute Inc.</p>
+                            <ul class="space-y-2 text-surface-600 dark:text-surface-400 text-sm">
+                                <li class="flex items-start gap-2"><i class="fas fa-caret-right text-primary-500 mt-1 flex-shrink-0"></i>Deployed Demand-Driven Planning &amp; Optimization (DDPO) solutions for Nestlé, Hershey's, Kellogg's, and Mondelez</li>
+                                <li class="flex items-start gap-2"><i class="fas fa-caret-right text-primary-500 mt-1 flex-shrink-0"></i>Improved forecast accuracy and minimized stockouts through advanced demand forecasting and inventory optimization</li>
+                                <li class="flex items-start gap-2"><i class="fas fa-caret-right text-primary-500 mt-1 flex-shrink-0"></i>Enhanced operational efficiency via advanced visualization dashboards and stakeholder collaboration tools</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Item 4: SAS Senior Associate Technical Consultant -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot">
+                            <i class="fas fa-briefcase text-xs"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="flex flex-wrap items-center gap-2 mb-2">
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-300">2012 – 2015</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-surface-900 dark:text-white">Senior Associate Technical Consultant</h3>
+                            <p class="text-primary-600 dark:text-primary-400 font-medium mb-3">SAS Institute</p>
+                            <ul class="space-y-2 text-surface-600 dark:text-surface-400 text-sm">
+                                <li class="flex items-start gap-2"><i class="fas fa-caret-right text-primary-500 mt-1 flex-shrink-0"></i>Delivered SAS analytics consulting engagements for enterprise clients, translating business requirements into scalable data-driven solutions</li>
+                                <li class="flex items-start gap-2"><i class="fas fa-caret-right text-primary-500 mt-1 flex-shrink-0"></i>Implemented statistical models and reporting frameworks to support client decision-making across multiple industry verticals</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Item 5: Oklahoma State / SAS -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot">
+                            <i class="fas fa-graduation-cap text-xs"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="flex flex-wrap items-center gap-2 mb-2">
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-300">2010 - 2012</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-surface-900 dark:text-white">Graduate Teaching Assistant / Presenter</h3>
+                            <p class="text-primary-600 dark:text-primary-400 font-medium mb-3">Oklahoma State University / SAS</p>
+                            <ul class="space-y-2 text-surface-600 dark:text-surface-400 text-sm">
+                                <li class="flex items-start gap-2"><i class="fas fa-caret-right text-primary-500 mt-1 flex-shrink-0"></i>Published scholarly paper on time series clustering methodology for store-level revenue analysis at SAS Global Forum 2012</li>
+                                <li class="flex items-start gap-2"><i class="fas fa-caret-right text-primary-500 mt-1 flex-shrink-0"></i>Research cited by 10+ sources including IEEE and Engineering Applications of Artificial Intelligence</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ EDUCATION ═══════════════════════ -->
+    <section id="education" class="py-24 bg-surface-50 dark:bg-surface-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block font-mono text-primary-600 dark:text-primary-400 text-sm tracking-wider uppercase mb-2">// Academic Background</span>
+                <h2 class="text-4xl font-bold text-surface-900 dark:text-white">Education</h2>
+            </div>
+
+            <div class="max-w-3xl mx-auto space-y-8">
+                <!-- PhD -->
+                <div class="scroll-reveal flex gap-6 p-6 rounded-2xl bg-white dark:bg-surface-900 border border-surface-200 dark:border-surface-800 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-primary-600 dark:text-primary-400 flex-shrink-0">
+                        <i class="fas fa-user-graduate text-xl"></i>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap items-center gap-2 mb-1">
+                            <span class="font-mono text-xs px-2 py-1 rounded bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-300">2025 – Present</span>
+                            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300">In Progress</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-surface-900 dark:text-white">Ph.D. in Information Technology</h3>
+                        <p class="text-primary-600 dark:text-primary-400 font-medium">Artificial Intelligence Emphasis</p>
+                        <p class="text-surface-600 dark:text-surface-400 text-sm mt-1">University of The Cumberlands, Williamsburg, Kentucky</p>
+                        <p class="text-surface-500 text-sm mt-1">GPA: 4.0</p>
+                    </div>
+                </div>
+
+                <!-- Master's -->
+                <div class="scroll-reveal flex gap-6 p-6 rounded-2xl bg-white dark:bg-surface-900 border border-surface-200 dark:border-surface-800 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-primary-600 dark:text-primary-400 flex-shrink-0">
+                        <i class="fas fa-graduation-cap text-xl"></i>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap items-center gap-2 mb-1">
+                            <span class="font-mono text-xs px-2 py-1 rounded bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-300">2010 – 2012</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-surface-900 dark:text-white">Master's in Management Information Systems</h3>
+                        <p class="text-primary-600 dark:text-primary-400 font-medium">Oklahoma State Univeristy, Spears School of Business</p>
+                        <p class="text-surface-600 dark:text-surface-400 text-sm mt-1">Oklahoma State University, Stillwater, Oklahoma</p>
+                        <p class="text-surface-500 text-sm mt-1">GPA: 3.52</p>
+                    </div>
+                </div>
+
+                <!-- Bachelor's -->
+                <div class="scroll-reveal flex gap-6 p-6 rounded-2xl bg-white dark:bg-surface-900 border border-surface-200 dark:border-surface-800 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-primary-600 dark:text-primary-400 flex-shrink-0">
+                        <i class="fas fa-graduation-cap text-xl"></i>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap items-center gap-2 mb-1">
+                            <span class="font-mono text-xs px-2 py-1 rounded bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-300">2003 – 2007</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-surface-900 dark:text-white">Bachelor of Computer Science Engineering</h3>
+                        <p class="text-primary-600 dark:text-primary-400 font-medium">Anna University, Jerusalem College of Engineering</p>
+                        <p class="text-surface-600 dark:text-surface-400 text-sm mt-1">Chennai, India</p>
+                        <p class="text-surface-500 text-sm mt-1">First Class</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 bg-surface-50 dark:bg-surface-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block font-mono text-primary-600 dark:text-primary-400 text-sm tracking-wider uppercase mb-2">// Portfolio</span>
+                <h2 class="text-4xl font-bold text-surface-900 dark:text-white">Featured Projects</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1: Spike Detection -->
+                <div class="project-card group">
+                    <div class="project-visual bg-gradient-to-br from-blue-500/10 to-indigo-500/10 dark:from-blue-500/20 dark:to-indigo-500/20">
+                        <i class="fas fa-heartbeat text-5xl text-blue-500/60 group-hover:scale-110 transition-transform"></i>
+                        <div class="absolute top-4 right-4 font-mono text-xs text-surface-400">01</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-surface-900 dark:text-white mb-2">Lingo Spike Detection &amp; Counts Algorithm</h3>
+                        <p class="text-sm text-surface-500 dark:text-surface-400 mb-4">PyTorch-based sequence model that detects harmful glucose spikes in real-time CGM data, enabling diabetic and pre-diabetic users to take immediate corrective action. Created the proprietary "Lingo Count" metric, a gamified daily score that makes metabolic self-management intuitive. U.S. patent pending (US20250226096A1).</p>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="text-xs font-mono px-2 py-1 rounded bg-surface-100 dark:bg-surface-800 text-surface-600 dark:text-surface-400">PyTorch</span>
+                            <span class="text-xs font-mono px-2 py-1 rounded bg-surface-100 dark:bg-surface-800 text-surface-600 dark:text-surface-400">Time Series</span>
+                            <span class="text-xs font-mono px-2 py-1 rounded bg-surface-100 dark:bg-surface-800 text-surface-600 dark:text-surface-400">CGM</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300"><i class="fas fa-scroll mr-1"></i>Patent Pending</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Personalized Insights -->
+                <div class="project-card group">
+                    <div class="project-visual bg-gradient-to-br from-purple-500/10 to-pink-500/10 dark:from-purple-500/20 dark:to-pink-500/20">
+                        <i class="fas fa-utensils text-5xl text-purple-500/60 group-hover:scale-110 transition-transform"></i>
+                        <div class="absolute top-4 right-4 font-mono text-xs text-surface-400">02</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-surface-900 dark:text-white mb-2">Lingo Personalized Insights Engine</h3>
+                        <p class="text-sm text-surface-500 dark:text-surface-400 mb-4">ML-powered API that analyzes how individual foods affect each user's blood glucose, delivering personalized meal and exercise recommendations. Democratizes complex metabolic data, enabling everyone from newly diagnosed diabetics to wellness enthusiasts to make informed dietary decisions.</p>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="text-xs font-mono px-2 py-1 rounded bg-surface-100 dark:bg-surface-800 text-surface-600 dark:text-surface-400">Python</span>
+                            <span class="text-xs font-mono px-2 py-1 rounded bg-surface-100 dark:bg-surface-800 text-surface-600 dark:text-surface-400">ML Pipeline</span>
+                            <span class="text-xs font-mono px-2 py-1 rounded bg-surface-100 dark:bg-surface-800 text-surface-600 dark:text-surface-400">REST API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: GenAI Food Logging -->
+                <div class="project-card group">
+                    <div class="project-visual bg-gradient-to-br from-emerald-500/10 to-teal-500/10 dark:from-emerald-500/20 dark:to-teal-500/20">
+                        <i class="fas fa-camera text-5xl text-emerald-500/60 group-hover:scale-110 transition-transform"></i>
+                        <div class="absolute top-4 right-4 font-mono text-xs text-surface-400">03</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-surface-900 dark:text-white mb-2">GenAI Food Logging for CGM Users</h3>
+                        <p class="text-sm text-surface-500 dark:text-surface-400 mb-4">ChatGPT-powered image recognition that removes the primary friction point in diabetes nutrition management: manual food logging. Users snap a photo; the system identifies ingredients, calculates macros, and correlates with their glucose response automatically.</p>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="text-xs font-mono px-2 py-1 rounded bg-surface-100 dark:bg-surface-800 text-surface-600 dark:text-surface-400">ChatGPT</span>
+                            <span class="text-xs font-mono px-2 py-1 rounded bg-surface-100 dark:bg-surface-800 text-surface-600 dark:text-surface-400">Vision AI</span>
+                            <span class="text-xs font-mono px-2 py-1 rounded bg-surface-100 dark:bg-surface-800 text-surface-600 dark:text-surface-400">GenAI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Lingo ChatBot -->
+                <div class="project-card group">
+                    <div class="project-visual bg-gradient-to-br from-orange-500/10 to-amber-500/10 dark:from-orange-500/20 dark:to-amber-500/20">
+                        <i class="fas fa-comments text-5xl text-orange-500/60 group-hover:scale-110 transition-transform"></i>
+                        <div class="absolute top-4 right-4 font-mono text-xs text-surface-400">04</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-surface-900 dark:text-white mb-2">Lingo AI Health Coach</h3>
+                        <p class="text-sm text-surface-500 dark:text-surface-400 mb-4">GenAI health advisor that turns passive glucose monitoring into active wellness coaching. Combines real-time CGM biometrics with personal health profiles to deliver contextual guidance, comparable to having a diabetes-aware nutritionist available 24/7.</p>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="text-xs font-mono px-2 py-1 rounded bg-surface-100 dark:bg-surface-800 text-surface-600 dark:text-surface-400">LLM</span>
+                            <span class="text-xs font-mono px-2 py-1 rounded bg-surface-100 dark:bg-surface-800 text-surface-600 dark:text-surface-400">GenAI</span>
+                            <span class="text-xs font-mono px-2 py-1 rounded bg-surface-100 dark:bg-surface-800 text-surface-600 dark:text-surface-400">Bio-wearable</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Document Vision Patent -->
+                <div class="project-card group">
+                    <div class="project-visual bg-gradient-to-br from-red-500/10 to-rose-500/10 dark:from-red-500/20 dark:to-rose-500/20">
+                        <i class="fas fa-file-image text-5xl text-red-500/60 group-hover:scale-110 transition-transform"></i>
+                        <div class="absolute top-4 right-4 font-mono text-xs text-surface-400">05</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-surface-900 dark:text-white mb-2">SAS Document Vision: Image Content Extraction</h3>
+                        <p class="text-sm text-surface-500 dark:text-surface-400 mb-4">Deep Learning + OCR pipeline with OpenCV for automated table extraction from scanned documents. Granted U.S. Patent (US11443416B2). Cited by Intuit, Oracle, Alibaba, Accenture &amp; 10+ others.</p>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="text-xs font-mono px-2 py-1 rounded bg-surface-100 dark:bg-surface-800 text-surface-600 dark:text-surface-400">PyTorch</span>
+                            <span class="text-xs font-mono px-2 py-1 rounded bg-surface-100 dark:bg-surface-800 text-surface-600 dark:text-surface-400">OpenCV</span>
+                            <span class="text-xs font-mono px-2 py-1 rounded bg-surface-100 dark:bg-surface-800 text-surface-600 dark:text-surface-400">Tesseract OCR</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300"><i class="fas fa-award mr-1"></i>Patented</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: DDPO -->
+                <div class="project-card group">
+                    <div class="project-visual bg-gradient-to-br from-cyan-500/10 to-sky-500/10 dark:from-cyan-500/20 dark:to-sky-500/20">
+                        <i class="fas fa-boxes-stacked text-5xl text-cyan-500/60 group-hover:scale-110 transition-transform"></i>
+                        <div class="absolute top-4 right-4 font-mono text-xs text-surface-400">06</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-surface-900 dark:text-white mb-2">SAS Demand-Driven Planning &amp; Optimization</h3>
+                        <p class="text-sm text-surface-500 dark:text-surface-400 mb-4">Integrated analytics platform combining demand forecasting, new product launch planning, and inventory optimization. Deployed for Nestlé, Hershey's, Kellogg's, and Mondelez.</p>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="text-xs font-mono px-2 py-1 rounded bg-surface-100 dark:bg-surface-800 text-surface-600 dark:text-surface-400">SAS</span>
+                            <span class="text-xs font-mono px-2 py-1 rounded bg-surface-100 dark:bg-surface-800 text-surface-600 dark:text-surface-400">Forecasting</span>
+                            <span class="text-xs font-mono px-2 py-1 rounded bg-surface-100 dark:bg-surface-800 text-surface-600 dark:text-surface-400">Supply Chain</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ PUBLICATIONS / RESEARCH ═══════════════════════ -->
+    <section id="publications" class="py-24 bg-white dark:bg-surface-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block font-mono text-primary-600 dark:text-primary-400 text-sm tracking-wider uppercase mb-2">// Research &amp; Recognition</span>
+                <h2 class="text-4xl font-bold text-surface-900 dark:text-white">Publications, Awards &amp; Affiliations</h2>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-10">
+
+                <!-- Scholarly Publications -->
+                <div>
+                    <h3 class="text-xl font-bold text-surface-900 dark:text-white mb-5 flex items-center gap-2"><i class="fas fa-book-open text-primary-500"></i> Scholarly Publications</h3>
+                    <div class="space-y-4">
+                        <div class="p-5 rounded-xl bg-surface-50 dark:bg-surface-800/50 border border-surface-200 dark:border-surface-700 hover:border-primary-300 dark:hover:border-primary-700 transition-colors">
+                            <h4 class="font-semibold text-surface-900 dark:text-white mb-1">Computer Vision-Enhanced Smart Manufacturing for Continuous Glucose Monitoring Device Production</h4>
+                            <p class="text-sm text-surface-500 dark:text-surface-400">International Journal of Computational and Experimental Science and Engineering (IJCESEN)</p>
+                        </div>
+                        <div class="p-5 rounded-xl bg-surface-50 dark:bg-surface-800/50 border border-surface-200 dark:border-surface-700 hover:border-primary-300 dark:hover:border-primary-700 transition-colors">
+                            <h4 class="font-semibold text-surface-900 dark:text-white mb-1">Real-Time Detection of Diabetic Ketoacidosis Through Multimodal Continuous Monitoring and Advanced Sequence Modeling</h4>
+                            <p class="text-sm text-surface-500 dark:text-surface-400">Journal of Information Systems Engineering and Management (JISEM)</p>
+                        </div>
+                        <div class="p-5 rounded-xl bg-surface-50 dark:bg-surface-800/50 border border-surface-200 dark:border-surface-700 hover:border-primary-300 dark:hover:border-primary-700 transition-colors">
+                            <h4 class="font-semibold text-surface-900 dark:text-white mb-1">Automated Extraction of Clinical Tables and Forms from Scanned Medical Records Using Computer Vision and Layout-Aware Machine Learning</h4>
+                            <p class="text-sm text-surface-500 dark:text-surface-400">Journal of International Crisis and Risk Communication Research (JICRCR)</p>
+                        </div>
+                        <div class="p-5 rounded-xl bg-surface-50 dark:bg-surface-800/50 border border-surface-200 dark:border-surface-700 hover:border-primary-300 dark:hover:border-primary-700 transition-colors">
+                            <h4 class="font-semibold text-surface-900 dark:text-white mb-1">Gamified Computer Vision and AI Coaching for Youth Tennis: Real-Time Feedback and Player Style Matching</h4>
+                            <p class="text-sm text-surface-500 dark:text-surface-400">Journal of Computer Science and Technology Studies (JCSTS)</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex flex-wrap gap-3">
+                        <a href="https://scholar.google.com/citations?user=fJ3kYroAAAAJ&hl=en" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-primary-600 dark:text-primary-400 font-medium hover:underline">
+                            <i class="fas fa-graduation-cap"></i> View all on Google Scholar <i class="fas fa-external-link-alt text-xs"></i>
+                        </a>
+                        <a href="https://medium.com/@karthik9001" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-primary-600 dark:text-primary-400 font-medium hover:underline">
+                            <i class="fab fa-medium"></i> Read on Medium <i class="fas fa-external-link-alt text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Awards -->
+                <div>
+                    <h3 class="text-xl font-bold text-surface-900 dark:text-white mb-5 flex items-center gap-2"><i class="fas fa-trophy text-amber-500"></i> Awards</h3>
+                    <div class="grid sm:grid-cols-3 gap-4">
+                        <div class="p-5 rounded-xl bg-gradient-to-br from-amber-50 to-amber-100/50 dark:from-amber-900/20 dark:to-amber-800/10 border border-amber-200 dark:border-amber-800/40 text-center">
+                            <i class="fas fa-medal text-2xl text-amber-500 mb-2"></i>
+                            <div class="font-semibold text-surface-900 dark:text-white text-sm">Claro Award 2025</div>
+                            <div class="text-xs text-surface-500">Tech Excellence</div>
+                        </div>
+                        <div class="p-5 rounded-xl bg-gradient-to-br from-amber-50 to-amber-100/50 dark:from-amber-900/20 dark:to-amber-800/10 border border-amber-200 dark:border-amber-800/40 text-center">
+                            <i class="fas fa-medal text-2xl text-amber-500 mb-2"></i>
+                            <div class="font-semibold text-surface-900 dark:text-white text-sm">ICDPN Conference Award</div>
+                            <div class="text-xs text-surface-500">Research Excellence</div>
+                        </div>
+                        <div class="p-5 rounded-xl bg-gradient-to-br from-amber-50 to-amber-100/50 dark:from-amber-900/20 dark:to-amber-800/10 border border-amber-200 dark:border-amber-800/40 text-center">
+                            <i class="fas fa-medal text-2xl text-amber-500 mb-2"></i>
+                            <div class="font-semibold text-surface-900 dark:text-white text-sm">Aureum Technology Award</div>
+                            <div class="text-xs text-surface-500">Innovation</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Judging & Speaking -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-surface-900 dark:text-white mb-5 flex items-center gap-2"><i class="fas fa-gavel text-primary-500"></i> Conference Judging</h3>
+                        <ul class="space-y-3 text-sm text-surface-600 dark:text-surface-400">
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-primary-500 mt-0.5 flex-shrink-0"></i>2025 SAS Hackathon</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-primary-500 mt-0.5 flex-shrink-0"></i>MEDCOM 2025 (Modern Electronics &amp; Intelligent Communication)</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-primary-500 mt-0.5 flex-shrink-0"></i>IEEE CCWC 2026 (Computing &amp; Communication Workshop)</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-primary-500 mt-0.5 flex-shrink-0"></i>IEEE ICoECIT 2026 (Emerging Computing &amp; Intelligent Technologies)</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-primary-500 mt-0.5 flex-shrink-0"></i>IIPEM 2025 (Intelligent Practices in Engineering &amp; Management)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-surface-900 dark:text-white mb-5 flex items-center gap-2"><i class="fas fa-microphone-alt text-primary-500"></i> Speaking Engagements</h3>
+                        <ul class="space-y-3 text-sm text-surface-600 dark:text-surface-400">
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-primary-500 mt-0.5 flex-shrink-0"></i>SAS Life Sciences Community Connection</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-primary-500 mt-0.5 flex-shrink-0"></i>SCOPE 2025</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-primary-500 mt-0.5 flex-shrink-0"></i>ICRSSEMA 2025 (Research in Social Science, Education, Management &amp; Arts)</li>
+                        </ul>
+
+                        <h3 class="text-xl font-bold text-surface-900 dark:text-white mt-8 mb-5 flex items-center gap-2"><i class="fas fa-users text-primary-500"></i> Memberships</h3>
+                        <ul class="space-y-3 text-sm text-surface-600 dark:text-surface-400">
+                            <li class="flex items-start gap-2"><i class="fas fa-star text-amber-500 mt-0.5 flex-shrink-0"></i>Full Member, Sigma XI Scientific Honor Society</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-star text-amber-500 mt-0.5 flex-shrink-0"></i>Fellow, IICSPA</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-star text-amber-500 mt-0.5 flex-shrink-0"></i>Raptor Fellowship Recipient</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ CONTACT ═══════════════════════ -->
+    <section id="contact" class="py-24 bg-surface-50 dark:bg-surface-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mx-auto text-center">
+                <span class="inline-block font-mono text-primary-600 dark:text-primary-400 text-sm tracking-wider uppercase mb-2">// Let's Connect</span>
+                <h2 class="text-4xl font-bold text-surface-900 dark:text-white mb-6">Get In Touch</h2>
+                <p class="text-lg text-surface-500 dark:text-surface-400 mb-10">
+                    I'm always open to discussing data science, AI research opportunities, collaborations, or just a friendly chat about technology.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+                    <a href="mailto:karthik.nakkeeran@gmail.com" class="inline-flex items-center gap-3 px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-xl font-semibold shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 transition-all">
+                        <i class="fas fa-envelope"></i>
+                        Send Me an Email
+                    </a>
+                    <a href="https://www.linkedin.com/in/karthik-nakkeeran-a9977a5/" target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-8 py-4 border-2 border-surface-300 dark:border-surface-700 text-surface-700 dark:text-surface-300 rounded-xl font-semibold hover:border-primary-500 hover:text-primary-600 dark:hover:text-primary-400 transition-all">
+                        <i class="fab fa-linkedin-in"></i>
+                        Connect on LinkedIn
+                    </a>
+                </div>
+
+                <!-- Social links grid -->
+                <div class="flex items-center justify-center gap-4">
+                    <a href="https://www.linkedin.com/in/karthik-nakkeeran-a9977a5/" target="_blank" rel="noopener" class="social-icon-footer" title="LinkedIn">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=fJ3kYroAAAAJ&hl=en" target="_blank" rel="noopener" class="social-icon-footer" title="Google Scholar">
+                        <i class="fas fa-graduation-cap text-xl"></i>
+                    </a>
+                    <a href="https://medium.com/@karthik9001" target="_blank" rel="noopener" class="social-icon-footer" title="Medium">
+                        <i class="fab fa-medium-m text-xl"></i>
+                    </a>
+                    <a href="https://github.com/karthik-dataiq" target="_blank" rel="noopener" class="social-icon-footer" title="GitHub">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+    <footer class="py-8 bg-white dark:bg-surface-900 border-t border-surface-200 dark:border-surface-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center text-white font-bold text-sm">K</div>
+                    <span class="text-sm text-surface-500">&copy; 2026 Karthik Nakkeeran. All rights reserved.</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="https://www.linkedin.com/in/karthik-nakkeeran-a9977a5/" target="_blank" rel="noopener" class="text-surface-400 hover:text-primary-500 transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://scholar.google.com/citations?user=fJ3kYroAAAAJ&hl=en" target="_blank" rel="noopener" class="text-surface-400 hover:text-primary-500 transition-colors"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="https://medium.com/@karthik9001" target="_blank" rel="noopener" class="text-surface-400 hover:text-primary-500 transition-colors"><i class="fab fa-medium-m"></i></a>
+                    <a href="https://github.com/karthik-dataiq" target="_blank" rel="noopener" class="text-surface-400 hover:text-primary-500 transition-colors"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
