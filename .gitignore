@@ -2,3 +2,4 @@
 *.pdf
 *.docx
 /profile_info
+.DS_Store
