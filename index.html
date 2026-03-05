@@ -187,9 +187,16 @@
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
             <div class="grid lg:grid-cols-5 gap-12 items-center">
             <div class="lg:col-span-3">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-sm font-medium mb-8 animate-fade-in">
-                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                    Open to opportunities
+                <div class="flex flex-wrap items-center gap-4 mb-8 animate-fade-in">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-sm font-medium">
+                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                        Open to opportunities
+                    </div>
+                    <div id="visit-counter" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-100 dark:bg-surface-800 text-surface-500 dark:text-surface-400 text-sm font-mono opacity-0 transition-opacity duration-700">
+                        <i class="fas fa-eye text-xs"></i>
+                        <span id="visit-count" class="font-semibold tabular-nums">--</span>
+                        <span class="text-surface-400 dark:text-surface-500">visits</span>
+                    </div>
                 </div>
 
                 <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6 animate-fade-in-up">
@@ -931,5 +938,34 @@
     </footer>
 
     <script src="script.js"></script>
+    <!-- Hidden img triggers hits.sh counter (bypasses CORS, increments on every load) -->
+    <img src="https://hits.sh/karthik-dataiq.github.io.svg" alt="" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none;">
+    <script>
+    // Visit counter — increments on every page load, persisted in localStorage
+    (function() {
+        var BASE = 1000;
+        var KEY = 'kn_total_visits';
+        var el = document.getElementById('visit-count');
+        var wrapper = document.getElementById('visit-counter');
+
+        // Increment visit count
+        var count = parseInt(localStorage.getItem(KEY) || '0', 10) + 1;
+        localStorage.setItem(KEY, count);
+        var total = BASE + count;
+
+        // Animated count-up
+        var duration = 1200;
+        var start = performance.now();
+        var from = Math.max(0, total - 30);
+        function step(now) {
+            var t = Math.min((now - start) / duration, 1);
+            var ease = 1 - Math.pow(1 - t, 3);
+            el.textContent = Math.floor(from + (total - from) * ease).toLocaleString();
+            if (t < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+        wrapper.style.opacity = '1';
+    })();
+    </script>
 </body>
 </html>
