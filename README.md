@@ -15,7 +15,7 @@
 | Icons         | Font Awesome 6 (Free CDN)                           |
 | Fonts         | Inter, JetBrains Mono (Google Fonts)                |
 | SEO           | JSON-LD structured data, Open Graph, Twitter Cards  |
-| Analytics     | hits.sh visit counter                               |
+| Analytics     | hits.sh shared visit counter                        |
 | Hosting       | GitHub Pages (free)                                 |
 
 ---
@@ -26,7 +26,7 @@
 - **Responsive** — mobile-first with hamburger menu
 - **Color-Blind Friendly** — blue-based palette safe for all color vision types
 - **SEO Optimized** — JSON-LD Person & WebSite schema, canonical URL, Open Graph, Twitter Cards, sitemap, robots.txt
-- **Visit Counter** — animated page view counter (starts at 1,000)
+- **Visit Counter** — shared page view counter (starts at 1,000)
 - **Scroll Animations** — fade-in reveal effects on scroll
 - **Active Nav Highlighting** — auto-highlights current section in navbar
 - **Print Styles** — clean output for print/PDF

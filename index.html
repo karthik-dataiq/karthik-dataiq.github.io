@@ -194,7 +194,12 @@
                     </div>
                     <div id="visit-counter" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-100 dark:bg-surface-800 text-surface-500 dark:text-surface-400 text-sm font-mono opacity-0 transition-opacity duration-700">
                         <i class="fas fa-eye text-xs"></i>
-                        <span id="visit-count" class="font-semibold tabular-nums">--</span>
+                        <img
+                            id="visit-count"
+                            alt="Visit counter"
+                            class="h-5 w-auto max-w-none font-semibold tabular-nums"
+                            src="https://hits.sh/karthik-dataiq.github.io.svg?style=flat-square&label=visits&extraCount=1000"
+                        />
                         <span class="text-surface-400 dark:text-surface-500">visits</span>
                     </div>
                 </div>
@@ -939,36 +944,25 @@
 
     <script src="script.js"></script>
     <script>
-    // Visit counter — shared global count via counterapi.dev
+    // Visit counter — shared global badge
     (function() {
-        var BASE = 1000; // Base count to start from (for legacy visits or to avoid showing low numbers)
-        var el = document.getElementById('visit-count');
         var wrapper = document.getElementById('visit-counter');
+        var badge = document.getElementById('visit-count');
 
-        function animateCount(target) {
-            var duration = 1200;
-            var start = performance.now();
-            var from = Math.max(0, target - 30);
-            function step(now) {
-                var t = Math.min((now - start) / duration, 1);
-                var ease = 1 - Math.pow(1 - t, 3);
-                el.textContent = Math.floor(from + (target - from) * ease).toLocaleString();
-                if (t < 1) requestAnimationFrame(step);
-            }
-            requestAnimationFrame(step);
+        if (!wrapper || !badge) return;
+
+        function showCounter() {
             wrapper.style.opacity = '1';
         }
 
-        // Hit the counter API — increments and returns the global count
-        fetch('https://api.counterapi.dev/v1/karthik-dataiq-portfolio/visits/up')
-            .then(function(r) { return r.json(); })
-            .then(function(data) {
-                animateCount(BASE + (data.count || 0));
-            })
-            .catch(function() {
-                // Fallback: show base count if API is down
-                animateCount(BASE);
-            });
+        if (badge.complete) {
+            showCounter();
+        } else {
+            badge.addEventListener('load', showCounter, { once: true });
+            badge.addEventListener('error', function() {
+                wrapper.style.display = 'none';
+            }, { once: true });
+        }
     })();
     </script>
 </body>
